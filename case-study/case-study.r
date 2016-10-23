@@ -4,11 +4,11 @@ library(ggplot2)
 library(plyr)
 library(stringr)
 library(MASS)
-source("../data/xtable.r")
+source("./data/xtable.r")
 
 if (!file.exists("deaths.rds")) {
   src <- "https://github.com/hadley/mexico-mortality/raw/master/deaths/deaths08.csv.bz2"
-  file.download(src, "deaths.csv.bz2", quiet = TRUE)
+  download.file(src, "deaths08.csv.bz2", quiet = TRUE)
   
   deaths <- read.csv("deaths08.csv.bz2")
   unlink("deaths08.csv.bz2")
