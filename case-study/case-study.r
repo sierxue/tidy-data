@@ -28,7 +28,7 @@ ok <- subset(deaths, yod == 2008 & mod != 0 & dod != 0)
 xtable(ok[c(1, 1:14 * 2000), c("yod", "mod", "dod", "hod", "cod")], 
   "raw.tex")
 
-codes <- read.csv("icd-main.csv")
+codes <- read.csv("./case-study/icd-main.csv")
 codes$disease <- sapply(codes$disease, function(x)
   str_c(strwrap(x, width = 30), collapse = "\n"))
 names(codes)[1] <- "cod"
