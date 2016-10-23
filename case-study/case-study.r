@@ -106,3 +106,4 @@ ggplot(hod_unusual_big, aes(hod, prop)) +
 ggsave("unusual-big.pdf", width = 8, height = 6)
 last_plot() %+% hod_unusual_sml
 ggsave("unusual-sml.pdf", width = 8, height = 4)
+
