@@ -44,7 +44,7 @@ ggsave("overall.pdf", width = 10, height = 6)
 # Count deaths per hour, per disease
 hod2 <- count(deaths, c("cod", "hod"))
 hod2 <- subset(hod2, !is.na(hod))
-hod2 <- join(hod2, codes)
+hod2 <- join(hod2, codes, by = "cod")
 hod2 <- ddply(hod2, "cod", transform, prop = freq / sum(freq))
 
 # Compare to overall abundance
